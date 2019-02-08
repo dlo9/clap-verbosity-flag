@@ -2,6 +2,8 @@ extern crate env_logger;
 extern crate failure;
 extern crate log;
 #[macro_use]
+extern crate serde_derive;
+#[macro_use]
 extern crate structopt;
 
 use env_logger::Builder as LoggerBuilder;
@@ -28,7 +30,7 @@ use log::Level;
 /// #
 /// # fn main() {}
 /// ```
-#[derive(StructOpt, Debug, Clone)]
+#[derive(StructOpt, Deserialize, Debug, Clone)]
 pub struct Verbosity {
     /// Pass many times for more log output
     ///
